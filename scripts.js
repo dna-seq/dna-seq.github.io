@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(entries => {
     rootMargin: '-200px'
   })*/
 
-const observer = new IntersectionObserver((entries) => {
+/* const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry)
     if (entry.isIntersecting) {
@@ -60,4 +60,33 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 const hiddenElements = document.querySelectorAll('.sections');
-hiddenElements.forEach((el) => observer.observe(el));
+hiddenElements.forEach((el) => observer.observe(el)); */
+
+/*const observer = new IntersectionObserver(entries => {
+  // Loop over the entries
+  entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      // Add the animation class
+      entry.target.classList.add('square-animation');
+    }
+  });
+});
+
+observer.observe(document.querySelector('.sections1'));*/
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const square = entry.target.querySelector('.sections1');
+
+    if (entry.isIntersecting) {
+      square.classList.add('square-animation');
+	  return; // if we added the class, exit the function
+    }
+
+    // We're not intersecting, so remove the class!
+    square.classList.remove('square-animation');
+  });
+});
+
+observer.observe(document.querySelector('.sections-wrapper1'));
