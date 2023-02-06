@@ -75,23 +75,44 @@ h2{
     margin-top: 3vw;
 
 }
+.sections{
+}
+.square-transition {
+    opacity: 1;
+    transform: none;
+}
 
-/* @keyframes wipe-enter {
+@keyframes wipe-enter {
 	0% {
         opacity: 0;
-		transform: scale(0, .025);
+		transform: scale(0, 0);
 	}
 	50% {
-        opacity: 1;
 		transform: scale(1, .025);
 	}
+    75%{
+        opacity: 1;
+    }
 }
+
+@keyframes slidein {
+    from {
+        opacity:0;
+      transform: translate(0, 4em);
+    }
+  
+    to {
+        opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
 
 @media (prefers-reduced-motion: no-preference) {
     .square-animation {
-      animation: wipe-enter 1s 1;
+      animation: slidein 1.5s 1;
     }
-  }*/ 
+  }
+
 
 footer{
     background-color: rgba(255, 255, 255, 0.7);
