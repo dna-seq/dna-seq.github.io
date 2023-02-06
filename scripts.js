@@ -1,4 +1,4 @@
-  function scrollTrigger(selector, options){
+  /*function scrollTrigger(selector, options){
     let els = document.querySelectorAll(selector)
     els = Array.from(els)
     els.forEach(el => {
@@ -30,5 +30,5 @@
   }
 
   // Example usage
-  scrollTrigger('.sections', options)
+  scrollTrigger('.sections', options)*/
 

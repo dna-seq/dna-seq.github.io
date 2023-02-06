@@ -76,6 +76,7 @@ h2{
 
 }
 .sections{
+    display:hidden;
 }
 .square-transition {
     opacity: 1;
@@ -97,7 +98,7 @@ h2{
 
 @keyframes slidein {
     from {
-        opacity:0;
+       opacity:0;
       transform: translate(0, 4em);
     }
   
