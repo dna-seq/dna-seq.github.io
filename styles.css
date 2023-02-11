@@ -14,7 +14,11 @@
 
 div .not{
 }
-
+.description{
+    margin-top: 2.5vw;
+    font-size: 1.2vw;
+    color:#656769;
+}
 h1{
     margin-top:100px;
     text-align: center;
@@ -326,6 +330,9 @@ th{
         height: 67vw;
         width: 40vw;
     }
+    .description{
+        font-size: 2vw;
+    }
     footer{
         margin-top: 8vw;
     }
@@ -425,6 +432,9 @@ th{
 }
 
 @media only screen and (max-width: 1000px) {
+    .description{
+        font-size: 3vw;
+    }
     h1{
         margin-top: 50px;
         font-size: 8vw;
