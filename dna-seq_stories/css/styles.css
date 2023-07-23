@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    background: #4DA0B0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #D39D38, #4DA0B0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #D39D38, #4DA0B0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+    
+    
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+h1{
+    margin-top: 1vw !important;
+    text-align: center;
+    font-size: 3vw !important;
+    font-weight: 400 !important;
+    color:#fad7a7 !important;
+}
+.icon{
+    width: 9vw;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 80vw;
+    display:flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.left-column{
+    width: 30vw;
+    display:flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 4vw;
+    justify-content: space-around;
+    background-image: url(".././images/forest.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 3vw;
+    border-radius: 20px;
+    border: 8px solid rgb(85, 44, 44, 0.9);
+    flex-wrap: wrap;
+    align-content: center;
+}
+.text{
+    background-color: rgba(131, 61, 61, 0.9);
+    border-radius: 15px;
+    padding: 1vw;
+}
+.left-column p {
+    display:block;
+    width: 23vw;
+    font-size: 1vw;
+    color: rgb(252, 229, 208);
+
+}
+.inner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 3vw;
+}
+img.cover{
+    margin-top: 1vw;
+    height: 36vw;
+    box-shadow: #552c2c;
+    box-shadow: 3px 3px 5px 3px rgb(85, 65, 52, 0.5);
+}
+
+.uk-button.uk-button-default{
+    align-self: center !important;
+    align-content: center !important;
+    font-size: 1.5vw !important;
+    padding: 1vw 3vw 1vw 3vw!important;
+    border: rgb(255, 208, 52) solid 7px;
+    border-radius: 15px;
+    color:#641b1b;
+    margin-left: 0.6vw;
+    width: 22vw;
+}
+.uk-button.uk-button-default:hover{
+    border: rgb(255, 180, 42) solid 7px;
+    color:#965555;
+}
+.uk-lightbox-items{
+    height: 100vh !important;
+}
+
+@media only screen and (max-width: 1800px) and (min-width: 1001px){
+
+    h1{
+        font-size: 5.5vw;
+    }
+    h2{
+        font-size: 2.7vw;
+    }
+
+
+}
+@media only screen and (max-width: 1600px) and (min-width: 1001px){
+}
+
+@media only screen and (max-width: 1000px) {
+    h1{
+        margin-top: 50px;
+        font-size: 8vw;
+        margin-bottom: 3vw;
+    }
+}
