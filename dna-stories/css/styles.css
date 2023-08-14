@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #4DA0B0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #D39D38, #4DA0B0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #D39D38, #4DA0B0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+
+}
+h1{
+    margin-top: 1vw !important;
+    text-align: center;
+    font-size: 3vw !important;
+    font-weight: 400 !important;
+    color:#fad7a7 !important;
+}
+.icon{
+    width: 9vw;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 80vw;
+    display:flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.left-column{
+    width: 30vw;
+    display:flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 4vw;
+    justify-content: space-around;
+    background-image: url(".././images/forest.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 3vw;
+    border-radius: 20px;
+    border: 8px solid rgb(85, 44, 44, 0.9);
+    flex-wrap: wrap;
+    align-content: center;
+}
+.text{
+    background-color: rgba(131, 61, 61, 0.9);
+    border-radius: 15px;
+    padding: 1vw;
+}
+.left-column p {
+    display:block;
+    width: 23vw;
+    font-size: 1vw;
+    color: rgb(252, 229, 208);
+
+}
+.inner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 3vw;
+}
+img.cover{
+    margin-top: 1vw;
+    height: 36vw;
+    box-shadow: #552c2c;
+    box-shadow: 3px 3px 5px 3px rgb(85, 65, 52, 0.5);
+}
+
+.uk-button.uk-button-default{
+    align-self: center !important;
+    align-content: center !important;
+    font-size: 1.8vw !important;
+    padding: 1vw 1.5vw 1vw 1.5vw!important;
+    border: rgb(255, 208, 52) solid 7px;
+    border-radius: 15px;
+    color:#641b1b;
+    width: 20vw;
+    margin-left: 3vw;
+}
+.uk-button.uk-button-default:hover{
+    border: rgb(255, 180, 42) solid 7px;
+    color:#965555;
+}
+
+@media only screen and (max-width: 1800px) and (min-width: 1001px){
+    .container{
+        flex-wrap: nowrap;
+        align-content: space-between;
+    }
+.icon{
+    width: 12vw;
+}
+.left-column{
+    width: 30vw;
+}
+.text p{
+    font-size: 1.3vw;
+}
+    img.cover{
+        height: 47vw !important;
+        width: 30vw !important;
+    }
+    h1{
+        font-size: 3.5vw !important;
+    }
+    .uk-button.uk-button-default{
+        font-size: 2.3vw !important;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 850px){
+    .container{
+        width: 95%;
+        flex-direction: column !important;
+    }
+    .left-column{
+        width: 40vw;
+    }
+    .text{
+        width: 30vw;
+
+    }
+    img.cover{
+        height: 60vw;
+    }
+    .inner{
+        height: 60vw;
+    }
+    .left-column p{
+        font-size: 1.7vw;
+        margin-right: 0vw;
+    }
+    h1{
+        margin-top: 50px;
+        font-size: 8vw;
+        margin-bottom: 4vw;
+    }
+    .icon{
+        display: none;
+    }
+    .uk-button.uk-button-default{
+        width:  100%;
+        margin: 0;
+        font-size: 3.2vw !important;
+    }
+}
+@media only screen and (max-width: 850px){
+    .container{
+        margin: 0;
+        flex-direction: column !important;
+        width: 100%;
+        flex-flow: column wrap !important; 
+        height: 150vh;
+    }
+    .icon{
+        margin: 0;
+    }
+    .inner{
+        margin: 0;
+        flex-grow:0;
+    flex-basis:50%;
+    margin-top: 0;
+    }
+    .text{
+        width: 70vw;
+        padding: 2vw;
+    }
+    .left-column p{
+        font-size: 3.5vw;
+        margin-right: 0vw;
+        width: 65vw;
+    }
+    .left-column{
+        margin:0;
+        width: 80vw;
+        height: 100vw;
+    }
+    h1{
+        font-size: 6.5vw !important;
+    }
+    .icon{
+        width: 40vw;
+        margin-top: 10vw;
+    }
+    .uk-button.uk-button-default{
+        width:80vw;
+        margin-left: 10vw;
+        font-size: 6.5vw !important;
+        font-weight: 500;
+        border: rgb(255, 208, 52) solid 6px;
+    }
+    img.cover{
+        height: 110vw;
+        margin-left: 6vw;
+    }
+    .uk-button.uk-button-default:hover{
+        border: rgb(255, 180, 42) solid 6px;
+    }
+}
