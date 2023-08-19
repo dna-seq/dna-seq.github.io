@@ -98,11 +98,7 @@ h2{
     margin-left: auto;
     width: 20vw;
 }
-.support{
-    font-size: 3rem; 
-    font-weight: 400; 
-    color:rgb(90, 219, 219)
-}
+
 @keyframes wipe-enter {
 	0% {
         opacity: 0;
@@ -345,7 +341,38 @@ th{
 .support1{
     margin-top: 5vw;
 }
+.small-conteiner{
+    display: flex;
+    width:80%;
+    margin: auto;
+    margin-bottom: 3vw;
+    align-items: center;
+}
+.small-conteiner p{
+    font-weight: 400;
+    color: rgb(128, 151, 149);
+}
+.small-conteiner a{
+    color: rgb(35, 184, 171);
+}
+.support{
+    font-size: 3rem; 
+    font-weight: 400; 
+    color:rgb(59, 209, 209);
+    text-align: center;
+}
+.support-section{
+    border: 5px solid rgb(65, 212, 175);
+    margin-top: 3vw;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 1800px) and (min-width: 1001px){
+    .small-conteiner img{
+        width: 20vw;
+        margin-left: 1vw;
+    }
     .qr{
         width: 30vw;
     }
@@ -472,6 +499,14 @@ th{
 }
 
 @media only screen and (max-width: 1000px) {
+    p.support{
+        font-size: 4vw;;
+    }
+    .small-conteiner img{
+        width: 30vw;
+        margin-left: 1vw;
+    }
+
     .support1{
         margin-top: 10vw;
     }
@@ -614,5 +649,15 @@ th{
     footer{
         margin-top: 0vw;
         height: 80px;
+    }
+    .support-section{
+        margin-right:auto;
+        margin-left: auto;
+        width: 90%;
+        border: 3px solid rgb(37, 185, 166);
+    }
+    .small-conteiner{
+        width: 90%;
+        align-items: center;
     }
 }
