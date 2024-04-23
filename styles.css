@@ -1,9 +1,52 @@
+* {
+    box-sizing: border-box;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    margin:0px;
+  }
 .back {
    position:fixed;
    right: 1.5vw;
    top: 0px;
    height: 100vh;
    z-index: -2;
+}
+
+.header{
+    height: 80px;
+    background: rgb(5,77,168);
+background: linear-gradient(90deg, rgba(5,77,168,0.7671860980720413) 0%, rgba(17,126,184,0.8064017843465512) 35%, rgba(6,93,164,0.783992820761117) 56%, rgba(0,212,255,0.8092029047947304) 100%);
+}
+
+a.header-element{
+    display:block;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+a.header-element:before{
+    content:"";
+    display: inline-block;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: width 0.5s;
+}
+a.header-element:hover a.header-element:before{
+    width: 100%;
+}
+.small-container{
+    display:flex;
+    height: 80px;
+    justify-content:space-around;
+    align-items:center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .logo{
     display: block;
@@ -12,8 +55,7 @@
     margin-bottom: 100px;
 }
 
-div .not{
-}
+
 .description{
     margin-top: 2.5vw;
     font-size: 1.2vw;
@@ -29,8 +71,9 @@ h1{
     margin-top:100px;
     text-align: center;
     font-size: 3.5vw;
-    font-weight: 300;
+    font-weight: 350;
     margin-bottom: 2vw;
+    color:#4f69b1;
 }
 .container{
     margin-right:17vw;
@@ -50,6 +93,105 @@ h2{
     font-weight: 300;
     margin-bottom:  0.5vw;
     margin-top: 7vw;
+}
+h2{
+display: block;
+border-top: solid 4px rgb(99, 164, 248);
+border-bottom: solid 4px rgb(99, 164, 248);
+width: fit-content;
+padding-left: 10px;
+padding-right: 10px;
+font-size: 2.7vw;
+font-family: "Rajdhani", sans-serif;
+font-weight: 500 !important;
+}
+#toTop{
+    z-index: 100;
+    height: 70px;
+    width: 70px;
+    background-color: #1b6db9;
+    border-radius: 10px;
+    position: fixed;
+    right: 2.35%;
+    bottom: 10%;
+    display:none;	
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: background-color 0.5s;
+}
+#toTop:hover{
+    background-color: #419aee;
+}
+.arrow{
+    position: absolute;
+    bottom: 10%;
+    z-index: 10;
+}
+.bodypart{
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid white;
+    right: 20px;
+    top:20%;
+}
+.btnExit{
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.8, 0.8, 0.8);
+    }
+    }
+
+
+.btnEntrance{
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 1;
+    }
+    }
+.line{
+    right: 31px;
+    bottom: 18px;
+    background: white;
+    width: 8px;
+    height: 33px;
+}
+h2.how{
+    margin-top: 50px;
+}
+.check-it{
+    width: 45%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.check-it p{
+    color:#eba742;
+    font-weight: 400;
+    font-size: 1.3em;
+}
+p.small{
+    font-size: 0.8em;
+    font-weight: 400;
+    color:#5c7c96;
 }
 .white{
     background-color: rgba(255, 255, 255, 0.9);
@@ -201,31 +343,24 @@ a{
 }
 span{
 }
-.D{
-    color:#aee44a;
-}
-.N{
-    color:#aee44a;
-}
-.A{
-    color:#aee44a;
-}
-.just{
-    color:#ffcb5a;
-}
-.seq{
-    color:#57dae4;
-}
+
 .why{
-    color:#ffcb5a;
+    color:#85a5ff;
     font-weight: 400;
+    width: 40%;
 }
 .how{
-    color:#b2e457;
+    color:#85a5ff;
     font-weight: 400;
+    color:#57dae4;
+    color:#aee44a;
+    color:#ffcb5a;
+    color:#85a5ff;
 }
+
+
 .work{
-    color:#577de4;
+    color:#85a5ff;
     font-weight: 400;
     margin-bottom: 2.5vw;
 }
@@ -413,10 +548,15 @@ th{
         font-size: 1.7vw;
     }
     h1{
-        font-size: 5.5vw;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 5vw;
+        text-align: left;
+        font-weight: 600;
     }
     h2{
         font-size: 2.7vw;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 500 !important;
     }
     .contact-info{
         margin-right: 20vw;
@@ -643,6 +783,12 @@ th{
     .footer-container a:first-child{
         margin-top:10vw;
     } 
+    a.header-element{
+        font-size: 0.8em;
+    }
+    .small-container{
+        width: 90%;
+    }
     .footer-container a:last-child{
         margin-bottom:10vw;
     } 

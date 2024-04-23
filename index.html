@@ -9,14 +9,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./images/just_dna_seq.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="./scripts.js" defer></script>
     <title>Just DNA-Seq</title>
 </head>
 <body>
+    <div id="toTop">
+        <section class="line arrow">
+        </section>
+        <section class="bodypart arrow">
+        </section>
+    </div>
+    <div class="header">
+        <div class="small-container">
+            <a href="http://agingkills.eu:8081/index.html" class="header-element" target=”_blank” >Try Just-DNA-Seq yourself!</a>
+            <a href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Our paper</a>
+            <a href="#team" class="header-element">About team</a>
+        </div>
+    </div>
     <div class="container">
     <img src="./images/just_dna_seq.png" class="back">
     <h1><span class="just">Just</span> <span class="D">D</span><span class="N">N</span><span class="A">A</span><span class="seq">-Seq</span></h1>
+    <div>
+        <div class="not">
+        <h2 class="how">How it works</h2>
+        <section class="white white-how">
+        <p>The Just DNA-Seq platform consists of OakVar (Open-source Genomic Variant Analysis Platform) modules, bioinformatics pipelines, and additional libraries. One can realign and annotate the genome of interest employing Just DNA-Seq tools to to retrieve polygenic risk scores (PRS), information about variants associated with age-related diseases or major life threatening risks and longevity-associated variants present in genome.</p>
+       
+        <img src="./images/how-it-works.jpg" class="image">
+        <div class="check-it">
+            <p style="margin-top:3vw;">Try Just-DNA-Seq <a href="http://agingkills.eu:8081/index.html">now!</a> </p>
+            <p class="small">Use our demo account to see already generated reports (<b>login:</b> <i>jdnaseq@gmail.com</i> <b>password: </b><i>123456</i>)</p>
+            
+        </div>
+        </section>
+    </div>
     <div class="not intro">
+        <p class="description">An example of the report you get:</p>
+        <img src="./images/report.png" class="report" alt="report">
+        <p class="description"><a href="https://dna-seq.github.io/report_example/">Full report example</a></p>
         <section class="white white-intro">
         <p>Just DNA-Seq is a set of open-source libraries and pipelines designed to help you with:</p>
         <ul class="outer">
@@ -29,12 +60,9 @@
                     <li>coronary artery disease risks variations</li>
                 </ul>
             </li>
-            <li>getting a comprehensive and transparent open-source report, inclusive of all previously mentioned information as well as polygenic health risk predictions and personal recommendations related to longevity:</li>
+            <li>getting a comprehensive and transparent open-source report, inclusive of all previously mentioned information as well as polygenic health risk predictions and personal recommendations related to longevity.</li>
         </ul>
-        <img src="./images/report.png" class="report" alt="report">
-        <p class="description">(also you can see an example of the full report <a href="https://dna-seq.github.io/report_example/">here</a>)</p>
-        <p style="margin-top:3vw;">You can test the project right now! Click the link to access our online portal <a href="http://agingkills.eu:8081/index.html">agingkills.eu</a> and explore it.</p>
-        <p>You can use our demo account to see already generated reports (login: <i>jdnaseq@gmail.com</i> password: <i>123456</i>)</p>
+       
     </section>
     </div>
 
@@ -68,14 +96,7 @@
     </section>
     </div>
 
-    <div>
-        <div class="not">
-        <h2 class="how">How it works</h2>
-        <section class="white white-how">
-        <p>The Just DNA-Seq platform consists of OakVar (Open-source Genomic Variant Analysis Platform) modules, bioinformatics pipelines, and additional libraries. One can realign and annotate the genome of interest employing Just DNA-Seq tools to to retrieve polygenic risk scores (PRS), information about variants associated with age-related diseases or major life threatening risks and longevity-associated variants present in genome.</p>
-        <img src="./images/how-it-works.jpg" class="image">
-        </section>
-    </div>
+   
     <div class="tables">
         <h2 class="why">At the moment we have the following modules in our report:</h2>
         <div class="sections-wrapper sections-wrapper1">
@@ -197,7 +218,7 @@
 </div>
     </div>
     </div>
-    <div class="contact-info">
+    <div id="team" class="contact-info">
     <div class="not">
         <h2 class="work">How to work with personal genome</h2>
         <p>Detailed user documentation is still in the making and is available at <a href="https://just-dna-seq.readthedocs.io/en/oakvar/">https://just-dna-seq.readthedocs.io</a></p>
@@ -227,4 +248,56 @@
     </div>
 </footer>
 </body>
+<script>
+
+const BtnBackToTop = document.querySelector("#toTop")
+
+window.addEventListener("scroll", scrollFunction);
+
+function scrollFunction() {
+  if (window.pageYOffset > 300) { // Show backToTopButton
+    if(!BtnBackToTop.classList.contains("btnEntrance")) {
+		BtnBackToTop.classList.remove("btnExit");
+		BtnBackToTop.classList.add("btnEntrance");
+		BtnBackToTop.style.display = "block";
+    }
+  }
+  else { // Hide backToTopButton
+    if(BtnBackToTop.classList.contains("btnEntrance")) {
+		BtnBackToTop.classList.remove("btnEntrance");
+		BtnBackToTop.classList.add("btnExit");
+      	setTimeout(function() {
+        BtnBackToTop.style.display = "none";
+      }, 250);
+    }
+  }
+}
+
+
+
+BtnBackToTop.addEventListener("click", backToTop);
+
+function backToTop() {
+	window.scrollTo(0, 0);
+}
+let currentWidth = document.body.clientWidth;
+
+let styles = calculatingStyles(currentWidth);
+
+window.addEventListener("resize", function(event) {
+    currentWidth = document.body.clientWidth;
+	styles = calculatingStyles(currentWidth);
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < acc.length; i++) {
+		if (acc[i].classList.contains("panel-description")){
+		acc[i].classList.toggle("active");
+		acc[i].style.borderRadius = "10px 10px 0px 0px"
+		var panel = acc[i].nextElementSibling;
+		panel.style.display="block"
+		panel.style.maxHeight = panel.scrollHeight + "px";
+	}
+	}
+})
+</script>
 </html>
