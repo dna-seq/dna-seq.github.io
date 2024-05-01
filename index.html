@@ -14,7 +14,46 @@
     <title>Just DNA-Seq</title>
 </head>
 <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">.</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+
+        <a class="main-links" href="#just-dna-seq" class="header-element">Just-DNA-Seq:</a>
+        <ul>
+            <li><a href="#tutorial">Tutorial</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#report">Report example</a></li>
+            <li><a href="#why">Why Just-DNA-Seq?</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#team" class="header-element">About team</a></li>
+        </ul>
+        <a class="main-links" href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Our paper</a>
+        <a class="main-links" href="https://github.com/dna-seq" target=”_blank”  class="header-element">Github</a>
+        <a class="main-links" href="https://just-dna-seq.readthedocs.io/en/oakvar/" target=”_blank”  class="header-element">Documentation</a>
+        <a class="main-links" href="https://longevity-genie.github.io/" target=”_blank”  class="header-element">Longevity-Genie project</a>
+        <p>Register on our platform:</p>
+        <a href="http://agingkills.eu:8081/index.html#" target=”_blank”><div class="login">Login/Sign in</div></a>
+        <p class="details">Use our demo account:</p>
+        <p class="details"><b>login:</b> <i>jdnaseq@gmail.com</i></p>
+        <p class="details"><b>password: </b><i>123456</i></p>
+        <div class="gitcoin gitcoin2">
+            <a class="gitcoin-a" href="https://explorer.gitcoin.co/#/round/42161/39/20" target=”_blank” >Support us on GitCoin!</a>
+        </div>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
     <div class="sidenav">
+        <div class="gitcoin">
+            <a class="gitcoin-a" href="https://explorer.gitcoin.co/#/round/42161/39/20" target=”_blank” >Support us on GitCoin!</a>
+        </div>
                 <a class="main-links" href="#just-dna-seq" class="header-element">Just-DNA-Seq:</a>
                 <ul>
                     <li><a href="#tutorial">Tutorial</a></li>
@@ -27,12 +66,13 @@
                 <a class="main-links" href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Our paper</a>
                 <a class="main-links" href="https://github.com/dna-seq" target=”_blank”  class="header-element">Github</a>
                 <a class="main-links" href="https://just-dna-seq.readthedocs.io/en/oakvar/" target=”_blank”  class="header-element">Documentation</a>
-                <a class="main-links" href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Longevity-Genie project</a>
+                <a class="main-links" href="https://longevity-genie.github.io/" target=”_blank”  class="header-element">Longevity-Genie project</a>
                 <p>Register on our platform:</p>
                 <a href="http://agingkills.eu:8081/index.html#" target=”_blank”><div class="login">Login/Sign in</div></a>
                 <p class="details">Use our demo account:</p>
                 <p class="details"><b>login:</b> <i>jdnaseq@gmail.com</i></p>
                 <p class="details"><b>password: </b><i>123456</i></p>
+
             </div>
     <div class="main">
         <div id="toTop">
@@ -47,12 +87,12 @@
         <div>
             <div class="not">
                 <section class="white white-how">
-                <p>Just-DNA-Seq is an open-source project that helps you analise your own genome:</p>
+                <p>Just-DNA-Seq is an open-source project that helps you analyze your genome:</p>
                 <ol class="other-ol">
-                    <li>Sequence your genome with the help of Nebula, Dante or any other sequencing company</li>
-                    <li>Get a vcf file with the information about your genome</li>
-                    <li>Upload it on <a href="http://agingkills.eu:8081/index.html#" target=”_blank”>our platform</a> and annotate it</li>
-                    <li>Get a personal report with the information about your predisposition to age-related diseases, major life threatening risks, and the information about your longevity based on your genome</li>
+                    <li>Sequence your genome with the help of Nebula, Dante, or any other sequencing company</li>
+                    <li>Obtain a VCF (Variant Call Format) file containing your genomic data</li>
+                    <li>Upload this file to <a href="http://agingkills.eu:8081/index.html#" target=”_blank”>our platform</a> for annotation</li>
+                    <li>Get a <a href="#report">personalized report</a> detailing your predisposition to age-related diseases, significant health risks, and insights into your longevity based on your genomic information.</li>
                 </ol>
                 <img src="./images/how-it-works.jpg" class="image">
                 <p id="tutorial">Tutorial of how to use Just-DNA-Seq platform:</p>
@@ -75,8 +115,9 @@
         </div>
         <div class="not intro">
             <p id="report" class="description">An example of the report you get:</p>
-            <img src="./images/report.png" class="report" alt="report">
             <p class="description"><a href="https://dna-seq.github.io/report_example/">Full report example</a></p>
+            <img src="./images/report.png" class="report" alt="report">
+
             <section class="white white-intro">
             <p>Just DNA-Seq is a set of open-source libraries and pipelines designed to help you with:</p>
             <ul class="outer">
@@ -127,7 +168,7 @@
 
     
         <div class="tables">
-            <h2 id="modules" class="why">At the moment we have the following modules in our report:</h2>
+            <h2 id="modules" class="why why-2">At the moment we have the following modules in our report:</h2>
             <div class="sections-wrapper sections-wrapper1">
             <section class="sections sections1">
             <table>
@@ -328,7 +369,14 @@ window.addEventListener("resize", function(event) {
 	}
 })
 
-
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
 </script>
 </html>

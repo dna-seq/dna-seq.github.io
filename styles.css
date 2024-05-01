@@ -16,7 +16,12 @@
    z-index: -2;
 }
 
-
+.check-it p{
+font-size: 22px;
+}
+.check-it p.small{
+    font-size: 20px;
+}
 a.header-element{
     display:block;
     color: white;
@@ -88,7 +93,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav a, .topnav a {
   padding: 6px 8px 10px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -97,7 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
   display: block;
 }
 .login{
-    background-color: yellowgreen;
+    background-color: rgb(196, 215, 255);
     width: 90%;
     height: 70px;
     align-content: center;
@@ -109,7 +114,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
     font-size: 20px;
     border-bottom: 4px solid white;
 }
-.sidenav p.details{
+.sidenav p.details, .topnav p.details{
     font-weight: 300;
     font-size: 17px;
     margin-bottom:0px;
@@ -118,29 +123,98 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
 .login:hover{
     background-color: #419aee;
 }
-.sidenav p{
+.sidenav p,  .topnav p{
 font-size: 25px;
 color: rgb(255, 255, 255);
 font-weight: 500;
 text-align: center;
 margin-top: 60px;
 }
-.sidenav li a{
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    position: relative;
+    background: rgb(95,126,158);
+background: -moz-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+background: linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endColorstr="#99c6f4",GradientType=1);
+  }
+.topnav a.main-links{
+    font-size: 27px;
+    border-bottom: #3e83c4 3px solid;
+    background: -moz-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+background: linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endColorstr="#99c6f4",GradientType=1);
+  
+}
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  p.details:last-child{
+    margin-bottom: 40px;
+  }
+  p.details:first{
+    margin-top: 40px;
+  }
+  .topnav div.login{
+width: 40%;
+  }
+  /* Style navigation menu links */
+  .topnav a {
+    color: rgb(255, 255, 255);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon1 {
+    background: rgb(64, 73, 94);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav{
+    display: none;
+  }
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black !important;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    background: rgb(95,126,158);
+    background: -moz-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+    background: linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endColorstr="#99c6f4",GradientType=1);
+    color: white;
+  }
+.sidenav li a, .topnav li a{
     font-size: 24px;
     font-weight: 400;
     padding-top: 0px;
 }
-.sidenav li{
+.sidenav li, .topnav li{
     display: block;
 }
+
 a.main-links{
     color:#2f444b;
     font-weight: 500;
 }
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav a:hover, .topnav a:hover  {
     color: rgb(211, 226, 255);
 }
+
 .inframe-container {
     position: relative;
     overflow: hidden;
@@ -155,6 +229,28 @@ a.main-links{
     right: 0;
     width: 100%;
     height: 100%;
+  }
+  .sidenav .gitcoin p, .sidenav .gitcoin-a{
+    margin-top: 0px;
+    width: 100%;
+    font-size: 18px;
+    color:rgb(191, 189, 224)
+  }
+  .gitcoin{
+    background: rgb(63, 64, 86);
+    margin-left: auto;
+    margin-right: auto;
+    width: 110%;
+    margin-left: -10px;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .gitcoin.gitcoin2{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 40px;
   }
 /* Style page content */
 .main {
@@ -290,11 +386,13 @@ h2.how{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
 }
 .check-it p{
     color:#eba742;
     font-weight: 400;
-    font-size: 1.3em;
+    font-size: 30px;
 }
 p.small{
     font-size: 0.8em;
@@ -677,6 +775,15 @@ th{
 
 }
 @media only screen and (max-width: 1600px) and (min-width: 1001px){
+    .main{
+        margin-left: 0px;
+    }
+    .topnav{
+        display: block;
+      }
+      .sidenav{
+        display: none;
+      }
     .back{
         visibility: hidden;
     }
@@ -745,9 +852,37 @@ th{
         margin-right: -14vw;
         margin-left:-14vw;
     }
+    h1{
+        text-align: center;
+    }
+    .other-ol{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
+    .check-it{
+        width: 100%;
+    }
+    .topnav div.login{
+        width: 60%;
+          }
+    h1{
+        text-align: center;
+    }
+    .other-ol{
+        font-size: 3vw;
+        width: 100%;
+    }
+    .topnav{
+        display: block;
+      }
+      .main{
+        margin-left: 0px;
+    }
+      .sidenav{
+        display: none;
+      }
     p.support{
         font-size: 4vw;;
     }
@@ -914,5 +1049,8 @@ th{
     .small-conteiner{
         width: 90%;
         align-items: center;
+    }
+    h2.why.why-2{
+        width: 100%;
     }
 }
