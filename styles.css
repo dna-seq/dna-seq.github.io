@@ -142,12 +142,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
   }
 .topnav a.main-links{
     font-size: 27px;
-    border-bottom: #3e83c4 3px solid;
-    background: -moz-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-background: -webkit-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-background: linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endColorstr="#99c6f4",GradientType=1);
-  
+    border-bottom: #eeeaff 2px solid;
+ 
 }
   /* Hide the links inside the navigation menu (except for logo/home) */
   .topnav #myLinks {
@@ -191,10 +187,7 @@ width: 40%;
   /* Style the active link (or home/logo) */
   .active {
     background: rgb(95,126,158);
-    background: -moz-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-    background: linear-gradient(0deg, rgba(95,126,158,1) 0%, rgba(123,166,199,1) 50%, rgba(153,198,244,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endColorstr="#99c6f4",GradientType=1);
+
     color: white;
   }
 .sidenav li a, .topnav li a{
