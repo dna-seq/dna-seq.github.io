@@ -18,27 +18,16 @@
 .inner-div{
     display: flex;
     flex-direction:row;
-    margin-top: -60px;
-}
-.inner-div1{
-    margin-top: -250px;
-    align-content: end;
-    justify-content: flex-end;
-    margin-right: 40px;
-
+    flex-wrap: wrap;
 }
 .textt-1{
-    margin-top: -70px;
-    margin-right: -300px;
     z-index: 1;
-    width: 30%;
 }
 img.old_couple{
-    width: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .block{
-    margin-left: -170px;
+    margin-left: -120px;
     z-index: 0;
     width: 83vw;
     display: flex;
@@ -58,51 +47,48 @@ h3.big-text{
     margin-bottom: 3em;
 }
 .textt{
-    width: 28%;
-    padding-top: -10px;
-    margin-left: -50px;
-    margin-top: 20px;
+    width: 35%;
     z-index: 2;
     padding-left: 10px;
     height: fit-content;
     text-align: right;
     border: 3px solid rgb(149, 166, 238);
-    border-right: 0px;
+    border-left: 0px;
+    padding-right: 10px;
     background-color: rgba(255, 255, 255, 0.349);
+    margin-top: 20px;
 
+}
+.inner-div.inner-div0{
+    align-items: flex-end;
 }
 .inner-div2 img.doctor{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     width: 45%;
     z-index: 8;
 }
-.inner-div2{
-    margin-top: -120px;
-    flex-direction: column;
-    
-}
 .textt-1{
     border: 3px solid rgb(149, 166, 238);
-    border-left: 0px;
+    border-right: 0px;
     height:fit-content;
     background-color: rgba(255, 255, 255, 0.349);
+    margin-top: 30px;
+    width: 40%;
+    padding-left: 10px;
 }
 .textt-2{
-    width: 33%;
+    margin-top: 30px;
+    width: 40%;
     text-align: right;
-    margin-left: 200px;
-    margin-bottom: -40px;
     z-index: 1;
     border: 3px solid rgb(149, 166, 238);
-    border-bottom: 0px;
+    border-left: 0px;
     padding-right: 20px;
     padding-left: 10px;
     padding-bottom: 40px;
+    height: fit-content
 }
-.people{
-    width: 90%;
-    position: relative;
-}
+
 .lane{
     width: 151%;
     height: 100px;
@@ -121,12 +107,11 @@ p.boldd{
     font-weight: 500;
 }
 .block img{
-    width: 50%;
+    width: 47%;
 }
 .block img.vertical{
-    width: 30%;
+    width: 50%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin-left: 70px;
 }
 .check-it p{
 font-size: 22px;
@@ -383,7 +368,7 @@ h1{
     font-size: 5vw;
     font-weight: 600;
     font-family: "Rajdhani", sans-serif;
-    margin-bottom: 8vw;
+    margin-bottom: 4vw;
     color:#4f69b1;
     text-align: right;
     border-bottom:rgb(104, 124, 219) solid 3px;
@@ -883,37 +868,17 @@ th{
     }
 
 }
-@media only screen and (max-width: 1300px) and (min-width: 1001px){
-    .textt-1{
-        margin-right: -250px;
-    }
-    .block img.vertical{
-        margin-left: 130px;
-    }
-}
+
 @media only screen and (max-width: 1600px) and (min-width: 1001px){
+
     .main{
         margin-left: 0px;
     }
     .topnav{
         display: block;
       }
-      .block img.vertical{
-        margin-left: -250px;
-    }
       .sidenav{
         display: none;
-      }
-      .inner-div2 img.doctor{
-        width: 55%;
-        margin-left: -130px;
-      }
-      .textt-2{
-        width: 40%;
-        margin-left: 60px;
-      }
-      .inner-div2{
-        margin-left: -120px;
       }
       h3.big-text{
         text-align: center;
@@ -1000,6 +965,37 @@ th{
 }
 
 @media only screen and (max-width: 1000px) {
+    .block{
+        margin-left: -80px;
+    }
+    .inner-div0{
+        flex-direction: column;
+    }
+    .inner-div{
+        flex-direction: column;
+    }
+    .inner-div.inner-div2{
+        flex-direction: column-reverse;
+    }
+    .textt, .textt-1, .textt-2{
+        width: 100%;
+    }
+    .block img, 
+    .block img.vertical, .inner-div2 img.doctor {
+        width: 100%;
+    }
+    .inner-div2 img.doctor {
+        margin-top: 20px;
+    }
+    img.old_couple {
+        margin-top: 20px;
+    }
+    .inner-div1{
+        flex-direction: column;
+    }
+    .inner-div2{
+        flex-direction: column;
+    }
     .check-it{
         width: 100%;
     }
@@ -1114,15 +1110,6 @@ th{
         margin-left:-8vw;
         border:#577de4 solid 1vw;
     }
-    .inner-div.inner-div2{
-        margin-top: 40px;
-    }
-    .textt-2{
-        width: 60%;
-    }
-    .inner-div2 img.doctor{
-        width: 77%;
-    }
     h3.big-text{
         font-size: 4vw;
     
@@ -1132,32 +1119,8 @@ th{
         margin-right: -10vw;
         margin-left:-10vw;
     }
-    .block{
-        margin-left: -100px;
-    }
-    .block img.old_couple{
-        width: 70%;
-    }
-    .inner-div{
-        margin-top: 0px;
-    }
-    .inner-div0{
-        margin-left: -100px;
-    }
-    .block img.vertical{
-        width: 50%;
-    }
-    .inner-div1{
-        margin-top: 140px;
-        margin-right: 0px;
-    }
-    .textt-1{
-        margin-right: -200px;
-        width: 70%;
-    }
-    .textt{
-        width: 70%;
-    }
+
+
     .section11{
         margin-right: -12vw;
         margin-left:-12vw;
@@ -1231,8 +1194,13 @@ th{
         width: 100%;
     }
 }
-@media only screen and (max-width: 1000px) {
-    .inner-div2 img.doctor{
-        margin-left: 40px;
-      }
+@media only screen and (max-width: 600px) {
+    .block{
+        margin-left: -60px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .block{
+        margin-left: -40px;
+    }
 }
