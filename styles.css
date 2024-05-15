@@ -64,7 +64,7 @@ h3.big-text{
 }
 .inner-div2 img.doctor{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    width: 45%;
+    width: 50%;
     z-index: 8;
 }
 .textt-1{
@@ -78,7 +78,7 @@ h3.big-text{
 }
 .textt-2{
     margin-top: 30px;
-    width: 40%;
+    width: 35%;
     text-align: right;
     z-index: 1;
     border: 3px solid rgb(149, 166, 238);
