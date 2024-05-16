@@ -88,6 +88,9 @@ h3.big-text{
     padding-bottom: 40px;
     height: fit-content
 }
+.inner-div1, .inner-div2{
+    margin-top: 40px;
+}
 
 .lane{
     width: 151%;
@@ -151,7 +154,9 @@ a.header-element:hover a.header-element:before{
     margin-right: auto;
     margin-bottom: 100px;
 }
-
+h2#why.why{
+    margin-top: 1.5em;
+}
 h1{
     z-index: 1;
     position: relative;
@@ -244,6 +249,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5f7e9e",endCo
     font-size: 27px;
     border-bottom: #eeeaff 2px solid;
  
+}
+div.intro p.description{
+    text-align: center;
+}
+.small-paragraph{
+    text-align: center;
 }
   /* Hide the links inside the navigation menu (except for logo/home) */
   .topnav #myLinks {
@@ -665,11 +676,9 @@ a{
     margin-bottom: 2.5vw;
 }
 .white-intro{
-    padding-top: 3vw;
     padding-bottom: 3vw;
     border-radius: 40px;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    text-align: left;
 }
 .white-why{
     padding: 2vw 2vw 2vw 0;
@@ -699,12 +708,7 @@ a{
     border-radius: 40px;
     padding: 2vw 2vw 2vw 0;
 }
-.intro p{
-    text-align: center;
-}
 .outer{
-    margin-left: 8vw;
-    margin-right: 8vw;
     line-height: 2;
 }
 .intro ul{
@@ -804,6 +808,7 @@ th{
     margin-right: auto;
 }
 @media only screen and (max-width: 1800px) and (min-width: 1001px){
+
     .small-conteiner img{
         width: 20vw;
         margin-left: 1vw;
@@ -823,7 +828,7 @@ th{
         height: 67vw;
         width: 40vw;
     }
-    .description{
+    div.intro p#report.description{
         font-size: 2vw;
     }
     footer{
@@ -853,6 +858,9 @@ th{
         text-align: center;
         font-weight: 600;
     }
+    p.description{
+        font-size: 2vw;
+    }
     h2{
         font-size: 2.7vw;
         font-family: "Rajdhani", sans-serif;
@@ -870,6 +878,7 @@ th{
 }
 
 @media only screen and (max-width: 1600px) and (min-width: 1001px){
+
 
     .main{
         margin-left: 0px;
@@ -965,6 +974,9 @@ th{
 }
 
 @media only screen and (max-width: 1000px) {
+    .inner-div1, .inner-div2{
+        margin-top: 0px;
+    }
     .block{
         margin-left: -80px;
     }

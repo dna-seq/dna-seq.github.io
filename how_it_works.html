@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/just_dna_seq.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Just DNA-Seq</title>
+</head>
+<body>
+
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">&nbsp;</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+
+    <a class="main-links" href="./index.html#just-dna-seq" class="header-element">Just-DNA-Seq:</a>
+    <ul>
+        <li><a href="./index.html#tutorial">Tutorial</a></li>
+        <li><a href="./index.html#report">Report example</a></li>
+        <li><a href="./index.html#modules">Modules</a></li>
+        <li><a href="./index.html#team" class="header-element">About team</a></li>
+    </ul>
+    <a class="main-links" href="./how_it_works.html" class="header-element">How it works</a>
+    <a class="main-links" href="./why_just_dna.html" class="header-element">Why Just-DNA-Seq?</a>
+    <a class="main-links" href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Our paper</a>
+    <a class="main-links" href="https://github.com/dna-seq" target=”_blank”  class="header-element">Github</a>
+    <a class="main-links" href="https://just-dna-seq.readthedocs.io/en/oakvar/" target=”_blank”  class="header-element">Documentation</a>
+    <a class="main-links" href="https://longevity-genie.github.io/" target=”_blank”  class="header-element">Longevity-Genie project</a>
+    <p>Register on our platform:</p>
+    <a href="http://agingkills.eu:8081/index.html#" target=”_blank”><div class="login">Login/Sign in</div></a>
+    <p class="details">Use our demo account:</p>
+    <p class="details"><b>login:</b> <i>jdnaseq@gmail.com</i></p>
+    <p class="details"><b>password: </b><i>123456</i></p>
+       <!--  <div class="gitcoin gitcoin2">
+            <a class="gitcoin-a" href="https://explorer.gitcoin.co/#/round/42161/39/20" target=”_blank” >Support us on <span style="text-decoration: underline;">GitCoin!</span></a>
+        </div> -->
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+    <div class="sidenav">
+            <!--    <div class="gitcoin">
+            <a class="gitcoin-a" href="https://explorer.gitcoin.co/#/round/42161/39/20" target=”_blank” >Support us on <span style="text-decoration: underline;">GitCoin!</span></a>
+        </div> -->
+        <a class="main-links" href="./index.html#just-dna-seq" class="header-element">Just-DNA-Seq:</a>
+        <ul>
+            <li><a href="./index.html#tutorial">Tutorial</a></li>
+        <li><a href="./index.html#report">Report example</a></li>
+        <li><a href="./index.html#modules">Modules</a></li>
+        <li><a href="./index.html#team" class="header-element">About team</a></li>
+        </ul>
+        <a class="main-links" href="./how_it_works.html" class="header-element">How it works</a>
+        <a class="main-links" href="./why_just_dna.html" class="header-element">Why Just-DNA-Seq?</a>
+        <a class="main-links" href="https://arxiv.org/abs/2403.19087" target=”_blank”  class="header-element">Our paper</a>
+        <a class="main-links" href="https://github.com/dna-seq" target=”_blank”  class="header-element">Github</a>
+        <a class="main-links" href="https://just-dna-seq.readthedocs.io/en/oakvar/" target=”_blank”  class="header-element">Documentation</a>
+        <a class="main-links" href="https://longevity-genie.github.io/" target=”_blank”  class="header-element">Longevity-Genie project</a>
+        <p>Register on our platform:</p>
+        <a href="http://agingkills.eu:8081/index.html#" target=”_blank”><div class="login">Login/Sign in</div></a>
+        <p class="details">Use our demo account:</p>
+        <p class="details"><b>login:</b> <i>jdnaseq@gmail.com</i></p>
+        <p class="details"><b>password: </b><i>123456</i></p>
+            </div>
+    <div class="main">
+        <div id="toTop">
+            <section class="line arrow">
+            </section>
+            <section class="bodypart arrow">
+            </section>
+        </div>
+        <div class="container">
+            <div class="not">
+                <h2 id="how" class="how">How it works</h2>
+                <section class="white white-how">
+                <p>The Just DNA-Seq platform consists of OakVar (Open-source Genomic Variant Analysis Platform) modules, bioinformatics pipelines, and additional libraries. One can realign and annotate the genome of interest employing Just DNA-Seq tools to retrieve polygenic risk scores (PRS), information about variants associated with age-related diseases or major life threatening risks and longevity-associated variants present in genome.</p>
+                </section>
+            </div>
+            <div class="not intro">
+            <section class="white white-intro">
+                <p>Just DNA-Seq is a set of open-source libraries and pipelines designed to help you with:</p>
+                <ul class="outer">
+                    <li>realigning your raw genome reads and doing variant calling using the latest tools and <a href="https://github.com/dna-seq/dna-seq">Bioinformatic pipelines</a></li>
+                    <li>annotating your own genome using  <a href="https://github.com/dna-seq/oakvar-longevity">longevity OakVar plugin</a> with:
+                        <ul>
+                            <li>known longevity, cancer risks</li>
+                            <li>known drug interactions</li>
+                            <li>cardio hereditary diseases risks</li>
+                            <li>coronary artery disease risks variations</li>
+                        </ul>
+                    </li>
+                    <li>getting a comprehensive and transparent open-source report, inclusive of all previously mentioned information as well as polygenic health risk predictions and personal recommendations related to longevity.</li>
+                </ul>
+            
+            </section>
+        </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <a href="https://github.com/dna-seq/" class="link1" target="_blank" rel="noopener noreferrer"><li>Our Github </li></a>
+                <a href="https://gitcoin.co/grants/4048/just-dna-seq" class="link2" target="_blank" rel="noopener noreferrer"><li>Our Gitcoin </li></a>
+                <a href="https://twitter.com/just_dna_seq" class="link3" target="_blank" rel="noopener noreferrer"><li>Our Twitter </li></a>
+                <a href="https://www.youtube.com/channel/UCKJPXRJgi4Rxh9Lb1G_9SZw" class="link4" target="_blank" rel="noopener noreferrer"><li>Our YouTube </li></a>
+                <a href="https://discord.com/invite/5WU6aSANXy" class="link5" target="_blank" rel="noopener noreferrer"><li> Our Discord</li></a>
+            </div>
+        </footer>
+    </div>
+    </body>
