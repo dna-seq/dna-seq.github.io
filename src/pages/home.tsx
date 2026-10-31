@@ -1,7 +1,7 @@
 import type { Assets } from "../page-types.ts";
 import { catalog } from "../data/catalog.ts";
 import { links, site } from "../site.ts";
-import { ArrowRight, Play } from "../components/bits.tsx";
+import { ArrowRight, Play, Shot } from "../components/bits.tsx";
 import { Chrome } from "../components/Chrome.tsx";
 
 /** The first screen: one line of a genome file, and the report label it becomes. */
@@ -138,6 +138,33 @@ function GenomeMap() {
   );
 }
 
+/** The app itself, as it looks after a genome is uploaded. */
+function TheApp() {
+  return (
+    <section className="section section--well" aria-labelledby="app-title">
+      <div className="container split split--wide-visual">
+        <div className="split-copy">
+          <h2 id="app-title">This is the app.</h2>
+          <p className="lead">It cleans up your file and shows what it kept before anything is matched.</p>
+          <p>Polygenic scores, annotated files and reports each have a tab of their own.</p>
+          <a className="btn" href="/report/">
+            What a report shows
+          </a>
+        </div>
+        <Shot
+          slot="app"
+          src="/img/app-ui.webp"
+          alt="The Just-DNA-Lite Annotation page for antonkulaga.vcf: tabs for Input, Polygenic Risk Scores, Annotated Files, Reports and Analysis Tools, the quality filters applied, and the first rows of the normalized VCF."
+          width={1446}
+          height={1211}
+          className="shot--app"
+          caption="Anton Kulaga's public genome after upload: the quality filters kept 4,257,537 of 6,079,744 variants."
+        />
+      </div>
+    </section>
+  );
+}
+
 const topics: { title: string; line: string; modules: string[]; tint: string }[] = [
   {
     title: "Long life",
@@ -208,7 +235,7 @@ function Close() {
           <h2 id="close-title">See a full report before sequencing.</h2>
           <p className="lead">The demo holds two public genomes, so every module runs on real data.</p>
           <div className="actions">
-            <a className="btn btn--on-ink" href={links.demo}>
+            <a className="btn btn--primary" href={links.demo}>
               Open the demo
             </a>
             <a className="btn btn--on-ink" href="/start/">
@@ -238,6 +265,7 @@ export function HomePage({ assets }: { assets: Assets }) {
     <Chrome meta={{ path: "/", title: site.title, description: site.description, tab: "home" }} assets={assets}>
       <Hero />
       <GenomeMap />
+      <TheApp />
       <Topics />
       <Close />
     </Chrome>

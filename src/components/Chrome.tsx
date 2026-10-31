@@ -41,7 +41,7 @@ function Masthead({ tab }: { tab?: TabId }) {
           <img src="/img/logo-96.png" alt="" width={40} height={40} />
           <span>Just-DNA</span>
         </a>
-        <a className="btn btn--quiet btn--small masthead-action" href={links.demo}>
+        <a className="btn btn--primary btn--small masthead-action" href={links.demo}>
           Try the demo
         </a>
       </div>

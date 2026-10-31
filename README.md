@@ -52,7 +52,8 @@ The design was made with the [Hallmark](https://github.com/Nutlope/hallmark) des
 warm paper, one green accent, Schibsted Grotesk for headings, Instrument Sans for text and DM Mono for
 genome data. The first lines of `src/styles/site.css` record the choices and the rules deliberately
 waived; keep them when editing. Every colour and font goes through a token in `tokens.css`. The site is
-light only.
+light only. Primary buttons use the logo's own colours: the `--logo-*` tokens are the PyMOL rainbow of
+the logo render, measured as the median lit colour of each hue band.
 
 None of the three fonts has Greek letters, so the ε in a module title such as "APOE type (ε2, ε3, ε4)"
 falls back to the system font. Topic grouping on the Modules tab uses a map from module name to topic in
