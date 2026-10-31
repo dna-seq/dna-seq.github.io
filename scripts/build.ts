@@ -6,7 +6,7 @@
 import { cp, mkdir, rename, rm } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
-import type { Assets } from "../src/components/Layout.tsx";
+import type { Assets } from "../src/page-types.ts";
 import { pages } from "../src/pages/index.ts";
 
 const root = join(import.meta.dir, "..");
@@ -16,12 +16,13 @@ const out = join(root, "dist.next");
 
 /** Fontsource stylesheets whose faces the site uses; only the subsets below are shipped. */
 const FONT_STYLESHEETS = [
-  "@fontsource-variable/inter/index.css",
-  "@fontsource-variable/source-serif-4/opsz.css",
-  "@fontsource-variable/jetbrains-mono/index.css",
+  "@fontsource-variable/schibsted-grotesk/index.css",
+  "@fontsource-variable/instrument-sans/index.css",
+  "@fontsource/dm-mono/400.css",
+  "@fontsource/dm-mono/500.css",
 ];
-/** Greek is in: module titles use ε (APOE ε2, ε3, ε4). */
-const FONT_SUBSET = /-(latin|latin-ext|greek)-(wght|opsz)-normal$/;
+/** None of the three faces ships Greek, so ε in a module title falls back to the system face. */
+const FONT_SUBSET = /-(latin|latin-ext)-(wght|400|500)-normal$/;
 
 /**
  * Bun's CSS bundler inlines url() fonts as base64 (a 1 MB stylesheet), so the fonts are copied as

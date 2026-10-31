@@ -1,7 +1,7 @@
 /**
- * Local preview: build, serve dist/, and rebuild in a fresh process whenever src/ or public/ changes
- * (a fresh process, so edited page modules are re-imported rather than served from Bun's cache).
- * Reload the browser after "rebuilt".
+ * Local preview: build, serve the build, and rebuild in a fresh process whenever src/ or public/
+ * changes (a fresh process, so edited page modules are re-imported rather than served from Bun's
+ * cache). Reload the browser after "rebuilt".
  */
 import { watch } from "node:fs";
 import { join } from "node:path";

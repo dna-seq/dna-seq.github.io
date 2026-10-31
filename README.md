@@ -6,9 +6,24 @@ The website of the Just-DNA ecosystem: [Just-DNA-Lite](https://github.com/dna-se
 [just-prs](https://github.com/dna-seq/just-prs). Live at <https://just-dna.life>.
 
 A static site built with [Bun](https://bun.sh) and TypeScript. Pages are React components rendered to
-plain HTML at build time; the browser gets that HTML, one stylesheet and a 3 KB script for the theme
-toggle, tabs, copy buttons and the catalog filter. Fonts are self-hosted, so a visit makes no
-third-party requests.
+plain HTML at build time; the browser gets that HTML, one stylesheet and a 1 KB script for the tabs
+inside pages and the copy buttons. Fonts are self-hosted, so a visit makes no third-party requests.
+
+## Structure
+
+The site is seven tabs, one page each, written for people reading their own genome first:
+
+| Tab | Path | For |
+|---|---|---|
+| Home | `/` | anyone curious about their genome |
+| Your report | `/report/` | what a report shows, polygenic scores, how to read a result |
+| Modules | `/modules/` | the catalog, grouped by topic |
+| Get started | `/start/` | getting a genome file, installing, the demo |
+| Contribute | `/contribute/` | writing and publishing modules with just-module-creator |
+| Developers | `/developers/` | libraries, AI assistant plugins and MCP servers, repositories |
+| About | `/about/` | why the project exists, its people; `/history/` covers the first generation |
+
+Longer pages split into tabs of their own; each has an address (`/report/#scores`).
 
 ## Develop
 
@@ -22,14 +37,26 @@ bun run check      # typecheck, build, and fail on broken internal links
 
 | Path | What |
 |---|---|
-| `src/pages/` | `home.tsx`, `history.tsx`, the 404 page, and `index.ts`, the list of pages and of old URLs that redirect |
-| `src/components/` | layout (header, footer, meta tags), icons, code blocks and tabs, and `Abstract.tsx`, the graphical abstract |
-| `src/site.ts` | every outbound link and the home page's sections, in one place |
-| `src/data/catalog.json` | snapshot of the module registry, rendered as the catalog grid |
-| `src/styles/site.css` | the whole stylesheet: tokens for light and dark, then components |
+| `src/pages/` | one file per tab, `history.tsx`, the 404 page, and `index.ts`, the list of pages and of old URLs that redirect |
+| `src/components/` | `Chrome.tsx` (the masthead with the tab row, the footer, meta tags) and `bits.tsx` (icons, code blocks, switchers) |
+| `src/site.ts` | every outbound link, in one place |
+| `src/data/catalog.json` | snapshot of the module registry, rendered on the Modules tab |
+| `src/styles/` | `tokens.css` (colours, type, spacing), `base.css`, and `site.css`, the components |
 | `src/client/main.ts` | the only browser script; the site reads fine without it |
 | `public/` | copied as is: images, `CNAME`, and the first-generation archive pages (`example/`, `dna-stories/`) |
 | `scripts/` | `build.ts`, `dev.ts`, `check-links.ts`, `refresh-catalog.ts`, `social-card.ts` |
+
+## Design
+
+The design was made with the [Hallmark](https://github.com/Nutlope/hallmark) design skill, theme "Dose":
+warm paper, one green accent, Schibsted Grotesk for headings, Instrument Sans for text and DM Mono for
+genome data. The first lines of `src/styles/site.css` record the choices and the rules deliberately
+waived; keep them when editing. Every colour and font goes through a token in `tokens.css`. The site is
+light only.
+
+None of the three fonts has Greek letters, so the ε in a module title such as "APOE type (ε2, ε3, ε4)"
+falls back to the system font. Topic grouping on the Modules tab uses a map from module name to topic in
+`src/pages/modules.tsx`; a new catalog module lands under "More topics" until it is added there.
 
 ## The catalog snapshot
 

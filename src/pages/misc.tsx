@@ -1,31 +1,45 @@
-import { Icon } from "../components/Icon.tsx";
-import { type Assets, Layout } from "../components/Layout.tsx";
+import type { Assets } from "../page-types.ts";
+import { Banner } from "../components/bits.tsx";
+import { Chrome, tabs } from "../components/Chrome.tsx";
+
+const where: Record<string, string> = {
+  report: "What a report shows.",
+  modules: "Every topic in the catalog.",
+  start: "From a file to a report.",
+  contribute: "Write a module.",
+  developers: "Libraries and plugins.",
+  about: "Why, and who.",
+};
 
 export function NotFoundPage({ assets }: { assets: Assets }) {
   return (
-    <Layout
-      meta={{ path: "/404.html", title: "Page not found · Just-DNA", description: "This page does not exist.", noindex: true }}
-      assets={assets}
-    >
-      <section className="page-hero page-hero-short">
+    <Chrome meta={{ path: "/404.html", title: "Page not found, Just-DNA", description: "This page does not exist.", noindex: true }} assets={assets}>
+      <Banner title="This page is not here." lead="The site was rebuilt in 2026 and some first-generation pages moved.">
+        <a className="btn btn--primary" href="/">
+          Go to the home page
+        </a>
+        <a className="btn" href="/history/">
+          The first generation
+        </a>
+      </Banner>
+      <section className="section section--flush" aria-labelledby="where-title">
         <div className="container">
-          <p className="eyebrow">404</p>
-          <h1>This page is not here</h1>
-          <p className="lead">
-            The site was rebuilt in 2026 and some first-generation pages moved. The history page links to everything
-            that was kept.
-          </p>
-          <div className="link-row">
-            <a className="button button-primary" href="/">
-              Home <Icon name="arrowRight" size={18} />
-            </a>
-            <a className="button button-secondary" href="/history/">
-              History and archive
-            </a>
-          </div>
+          <h2 id="where-title" className="visually-hidden">
+            The site’s tabs
+          </h2>
+          <ul className="where">
+            {tabs.slice(1).map((t) => (
+              <li key={t.id}>
+                <a href={t.href}>
+                  <b>{t.label}</b>
+                  <span>{where[t.id]}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
-    </Layout>
+    </Chrome>
   );
 }
 
@@ -38,7 +52,7 @@ export function RedirectPage({ to, from }: { to: string; from: string }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>Moved · Just-DNA</title>
+        <title>Moved, Just-DNA</title>
         <meta name="robots" content="noindex" />
         <link rel="canonical" href={`https://just-dna.life${to}`} />
         <meta httpEquiv="refresh" content={`0; url=${to}`} />

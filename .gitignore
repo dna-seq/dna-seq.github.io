@@ -2,3 +2,5 @@ node_modules/
 dist/
 dist.next/
 .DS_Store
+# Hallmark's working files (lint copies, screenshots, its rotation log)
+.hallmark/

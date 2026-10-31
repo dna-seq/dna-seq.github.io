@@ -53,19 +53,8 @@ export const links = {
 
 export const site = {
   name: "Just-DNA",
-  title: "Just-DNA: read your genome on your own computer",
+  title: "Just-DNA: see what published studies say about your genome",
   description:
-    "Open-source personal genomics. Just-DNA-Lite annotates your genome with modules from an open catalog and computes polygenic scores locally; just-module-creator writes new modules from papers with Claude Code or Codex.",
+    "Free, open-source personal genomics. Just-DNA-Lite reads your genome file against studies on longevity, health risks, medicines and traits, on your own computer, and shows the papers behind every finding.",
   socialImage: "/img/social-card.png",
 } as const;
-
-/** The home page's sections, in page order; the header and the footer both read this. */
-export const sections = [
-  { id: "how", label: "How it works" },
-  { id: "app", label: "The app" },
-  { id: "scores", label: "Scores" },
-  { id: "catalog", label: "Catalog" },
-  { id: "write", label: "Write a module" },
-  { id: "assistants", label: "Assistants" },
-  { id: "developers", label: "Developers" },
-] as const;

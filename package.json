@@ -11,9 +11,9 @@
     "check": "bun run typecheck && bun run build && bun scripts/check-links.ts"
   },
   "devDependencies": {
-    "@fontsource-variable/inter": "5.3.0",
-    "@fontsource-variable/jetbrains-mono": "5.3.0",
-    "@fontsource-variable/source-serif-4": "5.3.1",
+    "@fontsource-variable/instrument-sans": "5.3.0",
+    "@fontsource-variable/schibsted-grotesk": "5.3.0",
+    "@fontsource/dm-mono": "5.3.0",
     "@types/bun": "1.4.2",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.7",

@@ -1,7 +1,8 @@
 /**
  * Render public/img/social-card.png, the 1200x630 preview link unfurlers show, from the site's own
- * stylesheet and fonts. Needs a fresh `bun run build` and a local Chrome (CHROME=/path/to/chrome to
- * pick another); the PNG is committed, so CI never runs this.
+ * stylesheet, fonts and the home page's genome line and report label. Needs a fresh `bun run build`
+ * and a local Chrome (CHROME=/path/to/chrome to pick another); the PNG is committed, so CI never
+ * runs this.
  */
 import { Glob } from "bun";
 import { join } from "node:path";
@@ -14,31 +15,41 @@ const css = [...new Glob("assets/site-*.css").scanSync(dist)][0];
 if (!css) throw new Error("no built stylesheet in dist/; run `bun run build` first");
 
 const html = `<!doctype html>
-<html lang="en" data-theme="dark"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="/${css}">
 <style>
   html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-  .card { position: relative; width: 1200px; height: 630px; background: #08161d; color: #eaf3f2; overflow: hidden; }
-  .card .hero-glow { position: absolute; inset: 0; }
-  .card::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: var(--spectrum); }
-  .sc-helix { position: absolute; right: 40px; top: -30px; width: 400px; filter: drop-shadow(0 0 50px rgb(31 180 196 / .3)); }
-  .sc-text { position: absolute; left: 72px; top: 64px; width: 720px; }
-  .sc-brand { display: flex; align-items: center; gap: 16px; font-family: var(--font-sans); font-weight: 750; font-size: 34px; color: #fff; }
-  .sc-brand img { width: 56px; height: 56px; border-radius: 50%; }
-  .sc-brand span { color: #3fc9b5; }
-  .sc-text h1 { font-family: var(--font-serif); font-weight: 600; font-size: 58px; line-height: 1.08; color: #fff; margin: 48px 0 26px; letter-spacing: -0.01em; }
-  .sc-text p { font-family: var(--font-sans); font-size: 26px; line-height: 1.45; color: #a4b9bc; margin: 0; }
-  .sc-url { position: absolute; left: 72px; bottom: 50px; font-family: var(--font-mono); font-weight: 600; font-size: 24px; color: #7fd9cb; }
+  .sc { position: relative; display: grid; grid-template-columns: 1fr 470px; gap: 56px; align-items: center; width: 1200px; height: 630px; padding: 0 72px; box-sizing: border-box; background: var(--color-paper); background-image: var(--grain); }
+  .sc::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12px; background: var(--color-accent); }
+  .sc-brand { display: flex; align-items: center; gap: 14px; font-family: var(--font-display); font-weight: 700; font-size: 34px; color: var(--color-ink); }
+  .sc-brand img { width: 52px; height: 52px; border-radius: 50%; }
+  .sc-text h1 { margin: 40px 0 22px; font-size: 64px; line-height: 1.02; }
+  .sc-text p { margin: 0; font-size: 26px; line-height: 1.4; color: var(--color-ink-2); }
+  .sc-url { margin-top: 40px; font-family: var(--font-outlier); font-size: 24px; color: var(--color-accent-deep); }
+  .sc-art { display: grid; justify-items: center; gap: 18px; }
+  .sc-art .label { width: 100%; }
+  .sc-arrow { color: var(--color-accent); }
 </style></head>
-<body><div class="card">
-  <div class="hero-glow"></div>
-  <img class="sc-helix" src="/img/helix.webp" alt="">
+<body><div class="sc">
   <div class="sc-text">
-    <div class="sc-brand"><img src="/img/logo-96.png" alt=""><b>Just<span>-</span>DNA</b></div>
-    <h1>Read your genome against published evidence, on your own computer.</h1>
-    <p>Just-DNA-Lite, an open module catalog, just-module-creator for Claude Code and Codex, and polygenic scores with just-prs.</p>
+    <div class="sc-brand"><img src="/img/logo-96.png" alt=""><span>Just-DNA</span></div>
+    <h1>Your genome, read on your own computer.</h1>
+    <p>See what published studies say about your DNA, without uploading it.</p>
+    <div class="sc-url">just-dna.life</div>
   </div>
-  <div class="sc-url">just-dna.life</div>
+  <div class="sc-art">
+    <figure class="vcf"><figcaption>One line of your genome file</figcaption>
+      <code><span>chr6</span> <span>108587315</span> <span>G</span> <span>T</span> <span>0/1</span></code></figure>
+    <svg class="sc-arrow" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+    <figure class="label">
+      <div class="label-main">
+        <div class="label-head"><span>Longevity Map</span><span>rs2802292</span></div>
+        <p class="label-gene">FOXO3</p>
+        <p class="label-row">Your genotype <b>G/T</b></p>
+      </div>
+      <div class="label-stub"><span class="stamp">Protective<br>4 studies</span><span>Anton Kulaga’s public genome</span></div>
+    </figure>
+  </div>
 </div></body></html>`;
 
 const page = join(dist, "_social-card.html");
