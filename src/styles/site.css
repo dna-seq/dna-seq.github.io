@@ -66,7 +66,7 @@ a:not([class]) { text-decoration-color: color-mix(in oklab, var(--color-accent) 
 a:not([class]):hover { text-decoration-color: var(--color-accent); }
 
 /* The home hero: a corridor of text over the before and after. */
-.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; gap: var(--space-2xl); min-height: calc(100dvh - var(--masthead-h)); padding-block: var(--space-xl) var(--space-2xl); overflow: hidden; }
+.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: var(--space-xl); padding-block: var(--space-2xl); overflow: hidden; }
 .hero-light { position: absolute; inset: -20% -10% -20% 35%; z-index: -1; pointer-events: none; background:
   linear-gradient(var(--light), var(--light)) 0% 0% / 14% 58% no-repeat,
   linear-gradient(var(--light), var(--light)) 20% 0% / 14% 58% no-repeat,
@@ -98,8 +98,8 @@ a:not([class]):hover { text-decoration-color: var(--color-accent); }
 
 /* Sections and their rhythm. */
 .section { padding-block: var(--section-gap-s); }
-.section--tight { padding-block: var(--space-3xl) var(--section-gap-s); }
-.section-head { display: grid; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.section--tight { padding-block: var(--space-2xl) var(--section-gap-s); }
+.section-head { display: grid; gap: var(--space-md); margin-bottom: var(--space-xl); }
 .section > .container > h2 { margin-bottom: var(--space-2xl); }
 
 /* The map of where a genome goes. */
@@ -154,7 +154,7 @@ a:not([class]):hover { text-decoration-color: var(--color-accent); }
 .band--ink .video:focus-visible { outline-color: var(--color-accent-soft); }
 
 /* A tab page's first screen. */
-.banner { padding-block: var(--space-3xl) var(--section-gap-s); }
+.banner { padding-block: var(--space-2xl) var(--space-xl); }
 .banner-inner { display: grid; justify-items: start; gap: var(--space-lg); }
 .banner .lead { color: var(--color-ink-2); }
 
@@ -197,7 +197,7 @@ html:not(.js) .switch-panel + .switch-panel { margin-top: var(--space-xl); }
   .wordmark { justify-self: start; font-size: var(--text-xl); }
   .wordmark img { width: 32px; height: 32px; }
   .tabs { justify-content: flex-start; padding-inline: var(--gutter); }
-  .hero { min-height: 0; padding-block: var(--space-2xl); }
+  .hero { padding-block: var(--space-xl); }
   .before-after { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: var(--space-md); }
   .vcf, .label { justify-self: center; }
   .label { grid-template-columns: minmax(0, 1fr); }
@@ -267,10 +267,10 @@ html:not(.js) .switch-panel + .switch-panel { margin-top: var(--space-xl); }
 
 /* Get started: three bands of plastic, one per step. */
 .stages { list-style: none; counter-reset: stage; display: grid; gap: var(--space-lg); margin-block: 0; }
-.stage { counter-increment: stage; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; gap: var(--space-3xl); padding: var(--space-2xl); }
-.stage-copy::before { content: counter(stage); font-family: var(--font-display); font-weight: 700; font-size: var(--text-display); line-height: 0.9; letter-spacing: var(--tracking-display); color: color-mix(in oklab, var(--t) 45%, var(--color-ink)); }
+.stage { counter-increment: stage; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; gap: var(--space-2xl); padding: var(--space-xl); }
+.stage-copy::before { content: counter(stage); font-family: var(--font-display); font-weight: 700; font-size: var(--text-3xl); line-height: 0.9; letter-spacing: var(--tracking-display); color: color-mix(in oklab, var(--t) 45%, var(--color-ink)); }
 .stage-copy { display: grid; gap: var(--space-md); }
-.stage-copy h2 { font-size: var(--text-section); }
+.stage-copy h2 { font-size: var(--text-3xl); }
 .stage-side { min-width: 0; }
 .stage-side h3 { margin-bottom: var(--space-sm); }
 
@@ -308,7 +308,7 @@ html:not(.js) .switch-panel + .switch-panel { margin-top: var(--space-xl); }
   .split, .split--wide-visual, .rows-layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); }
   .facts, .habits, .archive { grid-template-columns: minmax(0, 1fr); }
   .stage { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); padding: var(--space-lg); }
-  .stage-copy::before { font-size: var(--text-section); }
+  .stage-copy::before { font-size: var(--text-2xl); }
   .rows > * { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
   .rows--numbered > li { grid-template-columns: var(--space-xl) minmax(0, 1fr); }
   .rows--numbered > li span { grid-column: auto; }
