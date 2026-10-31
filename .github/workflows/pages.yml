@@ -1,0 +1,55 @@
+name: pages
+
+# Builds the site with Bun and publishes it to GitHub Pages (the "GitHub Actions" Pages source, so
+# the repository holds no built HTML). The daily run refreshes the module catalog snapshot from the
+# registry without a commit: the registry sends no CORS headers, so the browser cannot read it live.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a deploy halfway; a queued run waits for the one ahead of it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+
+      # Optional on purpose: if the registry is down, the committed snapshot is used.
+      - name: Refresh the module catalog snapshot
+        run: bun run catalog
+        continue-on-error: true
+
+      # Typecheck, build, and fail on any broken internal link or fragment.
+      - run: bun run check
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
